@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Accounts</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <div class="wrapper_accounts w-100">
+      <div class="Appstore d-flex justify-content-between pb-3">
+        <div>
+          <span class="title" id="Apps"><i class="fa-solid fa-tag"></i>DCX-App </span>
+          <span class="title store_title">Store</span>
+          <div class="ps-4">BootStrap Ecommerce Template</div>
+        </div>
+      </div>
+
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="Products.html">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./MyAccounts.html">My Account</a>
+              </li>
+            </ul>
+            <form class="d-flex justify-content-between" role="search">
+              <div>
+                <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
+              </div>
+              <div>
+                <button
+                  class="btn ms-1 me-1"
+                  style="border-radius: 3.1px; background: white"
+                  type="submit"
+                >
+                  Search
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-outline"
+                  id="cart"
+                  style="background-color: hsl(199, 97%, 38%)"
+                >
+                  <span><i class="fa-solid fa-cart-shopping"></i></span> Cart
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <div class="mt-4">
+        <h2>Personal Information</h2>
+        <form id="registerForm" class="p-2" method="post" action="http://localhost:3000/register">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control input_details" id="name" name="name" placeholder="Deeksha" />
+            <div id="nameError" class="text-danger" style="display: none;">Name is required and must be at least 2 characters long.</div>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control input_details" id="email" name="email" placeholder="b-s.deeksha@capgemini.com" />
+            <div id="emailError" class="text-danger" style="display: none;">Please enter a valid email address.</div>
+          </div>
+          <div class="mb-3">
+            <label for="mobile" class="form-label">Mobile Number</label>
+            <input type="tel" class="form-control input_details" id="mobile" name="mobile" placeholder="7829066529" />
+            <div id="mobileError" class="text-danger" style="display: none;">Please enter a valid 10-digit mobile number.</div>
+          </div>
+          <div class="mb-3">
+            <label for="address1" class="form-label">Address</label>
+            <input type="text" class="form-control" id="address1" name="address1" placeholder="1234 Main St" />
+            <div id="address1Error" class="text-danger" style="display: none;">Address is required.</div>
+          </div>
+          <div class="mb-3">
+            <label for="address2" class="form-label">Address 2</label>
+            <input type="text" class="form-control" id="address2" name="address2" placeholder="Apartment, studio, or floor" />
+            <div id="address2Error" class="text-danger" style="display: none;">Address 2 is required.</div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="city" class="form-label">City</label>
+              <input type="text" class="form-control" id="city" name="city" />
+              <div id="cityError" class="text-danger" style="display: none;">City is required.</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="state" class="form-label">State</label>
+              <select id="state" class="form-select" name="state">
+                <option selected disabled>--Select--</option>
+                <option>Delhi</option>
+                <option>Maharashtra</option>
+                <option>Goa</option>
+                <option>Punjab</option>
+                <option>Haryana</option>
+              </select>
+              <div id="stateError" class="text-danger" style="display: none;">Please select a state.</div>
+            </div>
+            <div class="col-md-2 mb-3">
+              <label for="zip" class="form-label">Zip</label>
+              <input type="text" class="form-control" id="zip" name="zip" />
+              <div id="zipError" class="text-danger" style="display: none;">Please enter a valid 6-digit zip code.</div>
+            </div>
+          </div>
+          <button type="submit" class="btn" style="background: hsl(199, 97%, 38%); color: white;">Save</button>
+        </form>
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h3 class="mb-0">FAQs</h3>
+        </div>
+
+        <div class="faqsection">
+          <div>
+            <p><strong>What happens when I update my email address (or mobile number)?</strong></p>
+            <p>Your login email id (or mobile number) changes, likewise. You'll receive all your account-related communication on your updated email address (or mobile number).</p>
+          </div>
+          <div>
+            <p><strong>When will my account be updated with the new email address (or mobile number)?</strong></p>
+            <p>It happens as soon as you confirm the verification code sent to your email (or mobile) and save the changes.</p>
+          </div>
+          <div>
+            <p><strong>What happens to my existing account when I update my email address (or mobile number)?</strong></p>
+            <p>Updating your email address (or mobile number) doesn't invalidate your account. Your account remains fully functional. You'll continue seeing your Order history, saved information, and personal details.</p>
+          </div>
+          <div>
+            <p><strong>Does my Seller account get affected when I update my email address?</strong></p>
+            <p>We have a 'single sign-on' policy. Any changes will reflect in your Seller account also.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Custom Validation for Form Fields
+      document.getElementById('registerForm').addEventListener('submit', function (event) {
+        let isValid = true;
+
+        // Reset all error messages
+        document.getElementById('nameError').style.display = 'none';
+        document.getElementById('emailError').style.display = 'none';
+        document.getElementById('mobileError').style.display = 'none';
+        document.getElementById('address1Error').style.display = 'none';
+        document.getElementById('address2Error').style.display = 'none';
+        document.getElementById('cityError').style.display = 'none';
+        document.getElementById('stateError').style.display = 'none';
+        document.getElementById('zipError').style.display = 'none';
+
+        // Name Validation
+        const name = document.getElementById('name').value;
+        if (name.length < 2) {
+          document.getElementById('nameError').style.display = 'block';
+          isValid = false;
+        }
+
+        // Email Validation
+        const email = document.getElementById('email').value;
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+          document.getElementById('emailError').style.display = 'block';
+          isValid = false;
+        }
+
+        // Mobile Validation
+        const mobile = document.getElementById('mobile').value;
+        const mobilePattern = /^[0-9]{10}$/;
+        if (!mobilePattern.test(mobile)) {
+          document.getElementById('mobileError').style.display = 'block';
+          isValid = false;
+        }
+
+        // Address Validation
+        const address1 = document.getElementById('address1').value;
+        if (!address1) {
+          document.getElementById('address1Error').style.display = 'block';
+          isValid = false;
+        }
+
+        const address2 = document.getElementById('address2').value;
+        if (!address2) {
+          document.getElementById('address2Error').style.display = 'block';
+          isValid = false;
+        }
+
+        // City Validation
+        const city = document.getElementById('city').value;
+        if (!city) {
+          document.getElementById('cityError').style.display = 'block';
+          isValid = false;
+        }
+
+        // State Validation
+        const state = document.getElementById('state').value;
+        if (state === '--Select--' || !state) {
+          document.getElementById('stateError').style.display = 'block';
+          isValid = false;
+        }
+
+        // Zip Validation
+        const zip = document.getElementById('zip').value;
+        const zipPattern = /^\d{6}$/;
+        if (!zipPattern.test(zip)) {
+          document.getElementById('zipError').style.display = 'block';
+          isValid = false;
+        }
+
+        // Prevent form submission if invalid
+        if (!isValid) {
+          event.preventDefault();
+        }
+      });
+    </script>
+
+  </body>
+</html>
