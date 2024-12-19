@@ -26,7 +26,9 @@ INSERT INTO products (title, description, price, image_url, rating, reviews) VAL
 ('Playstation 4', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec dignissim', '699.99', 'Playstation.jfif', '5', '4'),
 ('Oneplus5', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec dignissim', '699.99', './oneplus.png', '5', '15');
 
-
+UPDATE products
+SET image_url = 'https://i.ibb.co/CvvqRhC/Samsung-galaxy.jpg'
+WHERE title = 'Samsung Galaxy S5';
 
 UPDATE products
 SET rating = 2
@@ -103,5 +105,11 @@ WHERE id = 7;
 select * from user_info;
 
 
-
-
+// UPDATE `myapi`.`products` SET `image_url`='https://i.ibb.co/5WGbnFc/microsoft-surface.jpg' WHERE `id`='6';
+// UPDATE `myapi`.`products` SET `image_url`='https://i.ibb.co/f8Rq0p8/oneplus.png' WHERE `id`='4';
+// UPDATE `myapi`.`products` SET `image_url`='https://i.ibb.co/f8Rq0p8/oneplus.png' WHERE `id`='9';
+// UPDATE `myapi`.`products` SET `image_url`='https://i.ibb.co/cDLYV56/Xbox-One.jpg' WHERE `id`='2';
+// UPDATE `myapi`.`products` SET `image_url`='https://i.ibb.co/yNPM6q7/Playstation.jpg' WHERE `id`='3';
+// UPDATE `myapi`.`products` SET `image_url`='https://i.ibb.co/yNPM6q7/Playstation.jpg' WHERE `id`='8';
+// UPDATE `myapi`.`products` SET `image_url`='https://i.ibb.co/R7w4mxq/vizismart-tv.jpg' WHERE `id`='7';
+// UPDATE `myapi`.`products` SET `image_url`='https://i.ibb.co/R7w4mxq/vizismart-tv.jpg' WHERE `id`='5';
